@@ -5,7 +5,6 @@ import json
 from pathlib import Path
 import shutil
 import subprocess
-from urllib.request import urlopen
 
 root = Path(__file__).resolve().parents[1]
 integration = root / 'integration'
@@ -21,8 +20,17 @@ for name, checksum in lock['files'].items():
     if args.upstream:
         data = (args.upstream / name).read_bytes()
     else:
-        with urlopen(f"{url}{lock['commit']}/cat-garden/src/{name}", timeout=60) as response:
-            data = response.read()
+        cache = build / 'upstream' / lock['commit'] / name
+        data = cache.read_bytes() if cache.is_file() else b''
+        if hashlib.sha256(data).hexdigest() != checksum:
+            data = subprocess.check_output([
+                'curl', '--fail', '--silent', '--show-error', '--location',
+                '--retry', '3', '--connect-timeout', '10', '--max-time', '60',
+                f"{url}{lock['commit']}/cat-garden/src/{name}"
+            ])
+            if hashlib.sha256(data).hexdigest() == checksum:
+                cache.parent.mkdir(parents=True, exist_ok=True)
+                cache.write_bytes(data)
     if hashlib.sha256(data).hexdigest() != checksum:
         raise ValueError(f'Unexpected upstream revision for {name}')
     edits = integration / (name + '.json')
