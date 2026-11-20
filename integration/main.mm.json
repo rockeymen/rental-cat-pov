@@ -1,0 +1,97 @@
+[
+  {
+    "offset": 267,
+    "remove": 3,
+    "insert": "rental.h\"\n#include \"film-motion"
+  },
+  {
+    "offset": 2144,
+    "remove": 14,
+    "insert": ""
+  },
+  {
+    "offset": 3905,
+    "remove": 54,
+    "insert": ""
+  },
+  {
+    "offset": 5957,
+    "remove": 99,
+    "insert": ""
+  },
+  {
+    "offset": 6190,
+    "remove": 47,
+    "insert": ""
+  },
+  {
+    "offset": 6733,
+    "remove": 0,
+    "insert": "film = false, "
+  },
+  {
+    "offset": 7061,
+    "remove": 0,
+    "insert": "film\") film = true; else if (a == \"--fps\") {fps=nf(); if(fps<=0)return 1;} else if (a == \"--"
+  },
+  {
+    "offset": 8354,
+    "remove": 17,
+    "insert": "Flat::Set apartment{sc, wd}; apartment.build("
+  },
+  {
+    "offset": 8397,
+    "remove": 23,
+    "insert": ""
+  },
+  {
+    "offset": 8700,
+    "remove": 101,
+    "insert": "fprintf(stderr, \"This keyframe study exports images and video only.\\n\"); return 1"
+  },
+  {
+    "offset": 13078,
+    "remove": 0,
+    "insert": " @autoreleasepool {"
+  },
+  {
+    "offset": 13250,
+    "remove": 40,
+    "insert": "Flat::pose(t), c1 = Flat::pose(t + shutter);\n      if(film){c0=Film::camera(t);c1=Film::camera(t+shutter);}"
+  },
+  {
+    "offset": 14583,
+    "remove": 19,
+    "insert": ""
+  },
+  {
+    "offset": 14977,
+    "remove": 67,
+    "insert": "Flat::moving(apartment,t,c0,d0,film?Film::toy(t):Flat::beat(t).toy,film);\n      Flat::moving(apartment,t+shutter,c1,d1,film?Film::toy(t+shutter):Flat::beat(t+shutter).toy,film);\n      if(film){\n        d0.push_back({apartment.footID,Film::pawPose(t),0,.4f,TINT1,0,{}});\n        d1.push_back({apartment.footID,Film::pawPose(t+shutter),0,.4f,TINT1,0,{}});\n      }"
+  },
+  {
+    "offset": 16193,
+    "remove": 22,
+    "insert": "(H + bands * 16 - 1) / (bands * 16)) * 16"
+  },
+  {
+    "offset": 16305,
+    "remove": 7,
+    "insert": "* bandH < H"
+  },
+  {
+    "offset": 18488,
+    "remove": 12,
+    "insert": ""
+  },
+  {
+    "offset": 18712,
+    "remove": 68,
+    "insert": "blink = film ? Film::lids(t) : 0.12f*smooth(14,16,t)+.88f*smooth(17,18.5,"
+  },
+  {
+    "offset": 19891,
+    "remove": 0,
+    "insert": "}"
+  }
+]

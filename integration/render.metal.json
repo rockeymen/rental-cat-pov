@@ -1,0 +1,17 @@
+[
+  {
+    "offset": 41971,
+    "remove": 0,
+    "file": "shader-1.metal"
+  },
+  {
+    "offset": 49689,
+    "remove": 0,
+    "file": "shader-2.metal"
+  },
+  {
+    "offset": 51867,
+    "remove": 0,
+    "file": "shader-3.metal"
+  }
+]
